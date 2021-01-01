@@ -10,21 +10,20 @@ interface ProductsProps {
   x: Animated.SharedValue<number>;
 }
 
-const Products: FC<ProductsProps> = ({ x }) => {
-  return (
-    <Container
-      {...{
-        style: StyleSheet.absoluteFillObject,
-        pointerEvents: "none",
-      }}>
-      {products.map((product, index) => (
-        <Product {...{ key: index, x, index, product }} />
-      ))}
-    </Container>
-  );
-};
+const Products: FC<ProductsProps> = ({ x }) => (
+  <Container
+    {...{
+      style: StyleSheet.absoluteFillObject,
+      pointerEvents: "none",
+    }}>
+    {products.map((product, index) => (
+      <Product {...{ key: index, x, index, product }} />
+    ))}
+  </Container>
+);
 
 export default Products;
+
 const Container = styled.View`
   justify-content: center;
   align-items: center;

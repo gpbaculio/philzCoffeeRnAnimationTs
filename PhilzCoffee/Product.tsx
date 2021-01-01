@@ -23,21 +23,23 @@ const Product: FC<ProductProps> = ({ x, index, product }) => {
       width * (index + 1),
     ];
 
-    const translateX = interpolate(x.value, inputRange, [
-      width / 2,
-      0,
-      -width / 2,
-    ]);
+    const translateXOutputRange = [width / 2, 0, -width / 2];
 
-    const scale = interpolate(x.value, inputRange, [0.75, 1, 0.75]);
+    const translateX = interpolate(x.value, inputRange, translateXOutputRange);
+
+    const scaleOutputRange = [0.75, 1, 0.75];
+
+    const scale = interpolate(x.value, inputRange, scaleOutputRange);
 
     return {
-      backgroundColor: `rgba(0,0,0,0.2)`,
       transform: [{ translateX }, { scale }],
     };
   });
 
-  const imageStyle = { width: SIZE, height: SIZE * product.aspectRatio };
+  const imageStyle = {
+    width: SIZE,
+    height: SIZE * product.aspectRatio,
+  };
 
   return (
     <Container

@@ -14,12 +14,12 @@ interface CardProps {
 const Card: FC<CardProps> = ({ product: { color1, title, subtitle } }) => (
   <Container>
     <SubContainer {...{ color1 }}>
-      <View>
+      <HeaderContainer>
         <CardHeader />
         <Title>{title}</Title>
         <SubTitle>{subtitle}</SubTitle>
-      </View>
-      <Button label="I'll try it" />
+      </HeaderContainer>
+      <Button {...{ label: `I'll try it` }} />
     </SubContainer>
   </Container>
 );
@@ -56,3 +56,5 @@ const SubTitle = styled.Text`
   text-align: center;
   color: #432406;
 `;
+
+const HeaderContainer = styled.View``;
