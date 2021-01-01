@@ -22,6 +22,7 @@ const Product: FC<ProductProps> = ({ x, index, product }) => {
       width * index,
       width * (index + 1),
     ];
+
     const translateXOutputRange = [width / 2, 0, -width / 2];
 
     const translateX = interpolate(x.value, inputRange, translateXOutputRange);
