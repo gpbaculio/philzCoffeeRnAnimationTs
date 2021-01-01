@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Image, StyleSheet } from "react-native";
+import { Image, StyleSheet, Text } from "react-native";
 import Animated, {
   interpolate,
   useAnimatedStyle,
@@ -22,7 +22,6 @@ const Product: FC<ProductProps> = ({ x, index, product }) => {
       width * index,
       width * (index + 1),
     ];
-
     const translateXOutputRange = [width / 2, 0, -width / 2];
 
     const translateX = interpolate(x.value, inputRange, translateXOutputRange);
